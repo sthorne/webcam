@@ -212,6 +212,11 @@ func (w *Webcam) Close() error {
 	return err
 }
 
+// return the file descriptor
+func (w *Webcam) Fd() uintptr {
+	return w.fd
+}
+
 func gobytes(p unsafe.Pointer, n int) []byte {
 
 	h := reflect.SliceHeader{uintptr(p), n, n}
